@@ -1,2 +1,2 @@
 # gopl-exercise
-The Go Programming Language exercises
+The Go Programming Language exercises solutions
