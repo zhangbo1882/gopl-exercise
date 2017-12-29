@@ -17,3 +17,9 @@ func BenchmarkComma1(b *testing.B) {
 		comma1(s)
 	}
 }
+
+func BenchmarkComma2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		comma2(s)
+	}
+}
