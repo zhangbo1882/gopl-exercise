@@ -26,6 +26,11 @@ func IsAnagrams(s string, t string) bool {
 			return false
 		}
 	}
+	for name, counter := range mapT {
+		if mapS[name] != counter {
+			return false
+		}
+	}
 	return true
 
 }
