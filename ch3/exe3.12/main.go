@@ -12,22 +12,15 @@ func IsAnagrams(s string, t string) bool {
 	if lenS != lenT {
 		return false
 	}
-	mapS := make(map[byte]int)
-	mapT := make(map[byte]int)
-	for i := 0; i < lenS; i++ {
-		_, ok := mapS[s[i]]
-		if !ok {
-			mapS[s[i]] = 1
-		} else {
-			mapS[s[i]]++
-		}
-		_, ok = mapT[t[i]]
-		if !ok {
-			mapT[t[i]] = 1
-		} else {
-			mapT[t[i]]++
-		}
+	mapS := make(map[rune]int)
+	mapT := make(map[rune]int)
+	for _, v := range s {
+		mapS[v]++
 	}
+	for _, v := range t {
+		mapT[v]++
+	}
+
 	for name, counter := range mapS {
 		if mapT[name] != counter {
 			return false
